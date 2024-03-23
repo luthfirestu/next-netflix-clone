@@ -13,7 +13,7 @@ const HeroMovie: React.FC = async () => {
                             <Moviecard
                                 key={item.id}
                                 id={item.id}
-                                //title={item?.name}
+                                title={item?.name}
                                 image={item?.poster_path}
                                 rating={item?.vote_average}
                             />
@@ -24,7 +24,7 @@ const HeroMovie: React.FC = async () => {
                     <h1 className="text-5xl font-bold">Box Office News!</h1>
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <div className="flex gap-4">
-                        <button className="btn bg-white text-black opacity-70 hover: btn-primary opacity-90">Play</button>
+                        <button className="btn bg-white text-black hover: btn-primary">Play</button>
                         <button className="btn btn-primary">Details</button>
                     </div>
                 </div>
