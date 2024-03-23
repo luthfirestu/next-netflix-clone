@@ -11,12 +11,12 @@ const Moviecard = (movie: {
   const router = useRouter();
   return (
     <div
-      className="card w-full  md:w-64 bg-base-100 shadow-xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+      className="card w-full  md:w-64 bg-base-100 shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
       onClick={() => {
         router.push(`/details/${movie.id}`);
       }}
     >
-      <figure className="hover:scale-105 hover:shadow-2xl">
+      <figure>
         <img
           src={`https://image.tmdb.org/t/p/w500/${movie.image}`}
           alt={movie.title}
@@ -24,8 +24,8 @@ const Moviecard = (movie: {
           height={150}
         />
       </figure>
-      <div className="card-body">
-        <p>{movie.title}</p>
+      <div className="card-body max-w-full">
+        <p className="text-pretty whitespace-normal truncate overflow-hidden">{movie.title}</p>
       </div>
     </div>
   );

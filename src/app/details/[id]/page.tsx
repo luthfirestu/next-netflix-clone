@@ -5,18 +5,13 @@ import Moviecard from "@/component/movieCard";
 
 const Page = async ({ params }: any) => {
   const data = await detailMovie(params.id);
-  const listSimiliarMovie = await similarMovie(params.id);
+
   return (
     <div className="p-5 flex flex-col gap-12 mt-6">
       <div className="text-3xl">Details</div>
       <div className="flex gap-6 flex-wrap">
-        <div>
-          <img
-            src={`${process.env.image}/${data.poster_path}`}
-            alt={data.title}
-            width={400}
-            height={350}
-          />
+        <div className="item-center">
+          <img src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`} width={"300px"}/>
           <div className="text-center font-semobold bg-slate-900 text-white p-1">
             Play Now
           </div>
@@ -43,22 +38,6 @@ const Page = async ({ params }: any) => {
             <p className="text-2xl font-semibold">Synopsis</p>
             <p>{data?.overview}</p>
           </div>
-        </div>
-      </div>
-      <div className="my-12 flex flex-col gap-12">
-        <p className="text-2xl font-medium">Similiar Movie</p>
-        <div className="flex flex-row flex-wrap justify-around gap-12  py-4">
-          {listSimiliarMovie.results?.map((item: any) => {
-            return (
-              <Moviecard
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                image={item?.poster_path}
-                rating={item?.vote_average}
-              />
-            );
-          })}
         </div>
       </div>
     </div>

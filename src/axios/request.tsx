@@ -1,6 +1,7 @@
 import axios from "axios";
 const API_KEY = process.env.API_TOKEN;
 
+// ambil data movie 
 export const movieData = async (movieOption: string) => {
   try {
     const res = await axios.get(
@@ -17,6 +18,7 @@ export const movieData = async (movieOption: string) => {
   }
 };
 
+// ambil data tv show
 export const tvData = async (tvOption: string) => {
   try {
     const res = await axios.get(
@@ -33,6 +35,7 @@ export const tvData = async (tvOption: string) => {
   }
 };
 
+// detail movie
 export const detailMovie = async (movieId: string) => {
   try {
     const res = await axios.get(
@@ -49,6 +52,7 @@ export const detailMovie = async (movieId: string) => {
   }
 };
 
+// similar movie
 export const similarMovie = async (id: string) => {
   try {
     const res = await axios.get(
@@ -65,6 +69,7 @@ export const similarMovie = async (id: string) => {
   }
 };
 
+// trending today: movie, tv
 export const trending = async (trendingOption: string) => {
   try {
     const res = await axios.get(

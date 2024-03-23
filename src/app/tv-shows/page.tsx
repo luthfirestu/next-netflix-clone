@@ -1,9 +1,10 @@
-import Hero from "@/component/hero";
+import Hero from "@/component/herotv";
 import TopRated from "./top-rated";
+import HeroTV from "@/component/herotv";
 export default function Page() {
     return (
         <div>
-            <Hero />
+            <HeroTV />
             <TopRated />
         </div>
     );

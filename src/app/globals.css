@@ -3,3 +3,15 @@
 @tailwind utilities;
 
 
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Ensure the card can be positioned relative to its parent */
+  z-index: 1; /* Ensure the card appears above its siblings */
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensure the hovered card appears above other cards */
+}
+
